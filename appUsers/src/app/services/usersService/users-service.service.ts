@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http'
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,22 @@ export class UsersService {
 
   constructor(private http:HttpClient) { }
 
-  public login( newUser: any): any{
-      console.log("Aqui creariamos el usuario: " + newUser.email + " " + newUser.password )
-      return true;
-      /*
+  public login( user: any ): Observable<any>{
+      console.log("Aqui logeariamos el usuario: " + user.email + " " + user.password )
+
       return this.http.post( this.apiURL + "/auth/log-in", 
-                            newUser, 
-                            { "headers": this.headers } );*/
+                            user, 
+                            { "headers": this.headers } );
   }
 
-  public signup( name: string, surname: string, email: string, password: string){
+  public signup( newUser: any ): any{
+    console.log("Aqui creariamos el usuario: " + newUser.name + " " + newUser.surname + " " + newUser.email + " " + newUser.password );
+    return true;
+
+    /*
     return this.http.post( this.apiURL + "/auth/sign-up", 
-                            { "name" : name, "surname": surname, "email" : email, "password": password }, 
-                            { "headers": this.headers } );
+                            { "name" : newUser.name, "surname": newUser.surname, "email" : newUser.email, "password": newUser.password }, 
+                            { "headers": this.headers } );*/
     
     //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768
 }

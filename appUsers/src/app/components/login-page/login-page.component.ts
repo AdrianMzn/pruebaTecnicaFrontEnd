@@ -13,7 +13,7 @@ export class LoginPageComponent implements OnInit {
   passwordErrors: boolean = false;
 
   loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.pattern('.*@.+') ] ),
+    email: new FormControl('', [Validators.required, Validators.pattern('.*@.+[\.].+') ] ),
     password: new FormControl('', [Validators.required])
   });
 
@@ -33,12 +33,12 @@ export class LoginPageComponent implements OnInit {
 
 
   login(){
-    
-
+  
     if( this.loginForm.valid ){
       console.log("Logeamos: " + this.loginForm.get('email')?.value + " " + this.loginForm.get('password')?.value )
-      this.usersService.login(this.loginForm.value).then( () => {
-        alert("Alumno creado");
+      this.usersService.login(this.loginForm.value).subscribe( (data: any) => {
+        alert("Usuario logeado");
+        console.log(data);
         this.loginForm.reset();
       }), (error: any) => {
         console.log(error)
