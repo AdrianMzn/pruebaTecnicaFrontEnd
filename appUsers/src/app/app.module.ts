@@ -10,6 +10,7 @@ import { UsersPageComponent } from './components/users-page/users-page.component
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { UsersService } from './services/usersService/users-service.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -39,6 +40,7 @@ const misRutas: Routes = [
     BrowserModule,
     RouterModule.forRoot(misRutas),
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [UsersService],

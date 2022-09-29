@@ -1,1 +1,21 @@
-<p>login-page works!</p>
+<div class="container" [ngStyle]="{backgroundColor: 'pink'}">
+
+    <form [formGroup]="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" id="email" (focus)="emailErrors=true;"/> <br/>
+        <div *ngIf="emailErrors">
+            <div *ngIf="email?.errors?.['required']" [ngStyle]="{color: 'red'}"> Email obligatorio</div>
+            <div *ngIf="email?.errors?.['pattern']" [ngStyle]="{color: 'red'}"> Email debe contener el caracter '@' y un dominio</div>
+            <br>
+        </div>
+    
+        <label for="password">Password:</label>
+        <input type="password" formControlName="password" id="password" (focus)="passwordErrors=true;"  /> <br/>
+        <div *ngIf="passwordErrors">
+            <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> Contraseña obligatoria</div>
+        </div>
+    
+        <button (click)="login(); emailErrors = true; passwordErrors=true; ">Login</button>
+    </form>
+    
+  </div>
