@@ -12,6 +12,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+
 import { UsersService } from './services/usersService/users-service.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -42,7 +43,7 @@ const misRutas: Routes = [
     RouterModule.forRoot(misRutas),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]

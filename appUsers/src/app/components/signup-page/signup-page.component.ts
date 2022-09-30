@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/usersService/users-service.service';
 import { CustomValidators } from 'src/app/validators/customValidators';
 
@@ -24,7 +25,7 @@ export class SignupPageComponent implements OnInit {
     surname: new FormControl('', [Validators.required])
   }, [CustomValidators.MatchValidator('password', 'passwordConfirm')]);
 
-  constructor(private usersService : UsersService) { }
+  constructor(private usersService : UsersService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -65,6 +66,7 @@ export class SignupPageComponent implements OnInit {
         alert("Usuario registrado");
         console.log(data)
         this.signupForm.reset();
+        this.router.navigate(['login']);
       }), (error: any) => {
         console.log(error)
       }

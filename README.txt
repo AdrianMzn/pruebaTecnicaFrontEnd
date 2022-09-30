@@ -1,7 +1,9 @@
 DECISIONES:
 
     -En pantalla de login no uso la propiedad blur de los input (hace que se dejen de mostrar los errores de los campos) porque
-        el usuario podria pensar que es correcta la informacion que ha escrito.
+        el usuario podria pensar que es correcta la informacion que ha escrito cuando pulsa fuera del input.
+    
+    -He añadido un campo de contraseña de confirmacion en el formulario de sign up porque es lo más común.
 
 
 
