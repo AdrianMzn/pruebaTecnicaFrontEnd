@@ -13,6 +13,11 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
 
+    if (localStorage.getItem('logged') == 'false'){
+      this.router.navigate(['login']);
+      alert('Necesitas iniciar sesion para acceder a esta pagina');
+    }
+
     this.usersService.getUsers().subscribe( (data: any) => {
       console.log(data);
     }), (error: any) => {

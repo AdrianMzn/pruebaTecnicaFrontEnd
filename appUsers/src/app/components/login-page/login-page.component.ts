@@ -22,6 +22,7 @@ export class LoginPageComponent implements OnInit {
   constructor(private usersService : UsersService, private router: Router) {}
 
   ngOnInit(): void {
+      localStorage.setItem('logged','false');
   }
 
   public get email(){
@@ -41,6 +42,7 @@ export class LoginPageComponent implements OnInit {
         console.log(data);
         this.usersService.addToken(data.accessToken);
         localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('logged', 'true');
         this.router.navigate(['home']);
       },
       (error: HttpErrorResponse) => {
