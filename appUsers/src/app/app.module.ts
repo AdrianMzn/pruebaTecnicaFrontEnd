@@ -34,7 +34,8 @@ const misRutas: Routes = [
     SignupPageComponent,
     HomePageComponent,
     ErrorPageComponent,
-    NavbarComponent
+    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,

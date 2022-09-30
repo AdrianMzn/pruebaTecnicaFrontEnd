@@ -28,7 +28,15 @@
         <input type="password" formControlName="password" id="password" (focus)="passwordErrors=true;"  /> <br/>
         <div *ngIf="passwordErrors">
             <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> Contraseña obligatoria</div>
+            <br>
         </div>
+
+        <label for="passwordConfirm">Confirm password:</label>
+        <input type="password" formControlName="passwordConfirm" id="passwordConfirm"   /> <br/>
+        <div *ngIf="passwordMatchError" [ngStyle]="{color: 'red'}"> 
+            Password does not match
+        </div>
+        <br>
     
     
         <button (click)="signup();">SignUp</button>

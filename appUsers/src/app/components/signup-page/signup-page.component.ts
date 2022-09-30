@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/usersService/users-service.service';
+import { CustomValidators } from 'src/app/validators/customValidators';
 
 @Component({
   selector: 'app-signup-page',
@@ -13,13 +14,15 @@ export class SignupPageComponent implements OnInit {
   passwordErrors: boolean = false;
   nameErrors: boolean = false;
   surnameErrors: boolean = false;
+  passwordConfirmErrors: boolean = false;
 
   signupForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.pattern('.*@.+[\.].+') ] ),
     password: new FormControl('', [Validators.required]),
+    passwordConfirm: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     surname: new FormControl('', [Validators.required])
-  });
+  }, [CustomValidators.MatchValidator('password', 'passwordConfirm')]);
 
   constructor(private usersService : UsersService) { }
 
@@ -34,12 +37,22 @@ export class SignupPageComponent implements OnInit {
     return this.signupForm.get('password');
   }
 
+  public get passwordConfirm(){
+    return this.signupForm.get('passwordConfirm');
+  }
+
   public get name(){
     return this.signupForm.get('name');
   }
 
   public get surname(){
     return this.signupForm.get('surname');
+  }
+
+  get passwordMatchError() {
+    return (
+      this.signupForm.getError('mismatch')
+    );
   }
 
 
@@ -58,11 +71,11 @@ export class SignupPageComponent implements OnInit {
 
     }
     else{
-      this.signupForm.reset();
       this.emailErrors = true; 
       this.passwordErrors=true; 
       this.nameErrors=true; 
       this.surnameErrors=true;
+      this.passwordConfirmErrors=true;
     }
 
   }
