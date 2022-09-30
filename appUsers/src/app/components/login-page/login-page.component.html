@@ -15,7 +15,7 @@
             <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> Contraseña obligatoria</div>
         </div>
     
-        <button (click)="login(); emailErrors = true; passwordErrors=true; ">Login</button>
+        <button (click)="login();">Login</button>
     </form>
     
   </div>

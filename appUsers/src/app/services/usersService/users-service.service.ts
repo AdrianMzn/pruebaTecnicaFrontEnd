@@ -20,15 +20,40 @@ export class UsersService {
                             { "headers": this.headers } );
   }
 
-  public signup( newUser: any ): any{
+  public signup( newUser: any ):  Observable<any>{
     console.log("Aqui creariamos el usuario: " + newUser.name + " " + newUser.surname + " " + newUser.email + " " + newUser.password );
-    return true;
 
-    /*
     return this.http.post( this.apiURL + "/auth/sign-up", 
                             { "name" : newUser.name, "surname": newUser.surname, "email" : newUser.email, "password": newUser.password }, 
-                            { "headers": this.headers } );*/
+                            { "headers": this.headers } );
     
     //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768
-}
+  } 
+
+  public addToken(accessToken: string){
+    this.headers = new HttpHeaders( {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`
+    } );
+  }
+
+  public getInfo():  Observable<any>{
+    console.log("Obtenemos informacion de mi usuario");
+
+    console.log( this.headers);
+
+    return this.http.get( this.apiURL + "/users/me", 
+                            { "headers": this.headers } );
+    
+  } 
+
+  public getUsers():  Observable<any>{
+    console.log("Obtenemos informacion de mi usuario");
+
+    console.log( this.headers);
+
+    return this.http.get( this.apiURL + "/users", 
+                            { "headers": this.headers } );
+    
+  } 
 }

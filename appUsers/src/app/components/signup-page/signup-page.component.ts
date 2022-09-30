@@ -48,13 +48,21 @@ export class SignupPageComponent implements OnInit {
     if( this.signupForm.valid ){
 
       console.log("Registramos: " + this.signupForm.get('email')?.value + " " + this.signupForm.get('password')?.value )
-      this.usersService.signup(this.signupForm).then( () => {
+      this.usersService.signup(this.signupForm.value).subscribe( (data: any) => {
         alert("Usuario registrado");
+        console.log(data)
         this.signupForm.reset();
       }), (error: any) => {
         console.log(error)
       }
 
+    }
+    else{
+      this.signupForm.reset();
+      this.emailErrors = true; 
+      this.passwordErrors=true; 
+      this.nameErrors=true; 
+      this.surnameErrors=true;
     }
 
   }
