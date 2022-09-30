@@ -48,7 +48,7 @@ export class UsersService {
   } 
 
   public getUsers():  Observable<any>{
-    console.log("Obtenemos informacion de mi usuario");
+    console.log("Obtenemos informacion de todos los usuarios");
 
     console.log( this.headers);
 
