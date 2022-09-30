@@ -15,6 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { UsersService } from './services/usersService/users-service.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterCComponent } from './components/footer-c/footer-c.component';
 
 const misRutas: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'}, 
@@ -36,6 +37,7 @@ const misRutas: Routes = [
     HomePageComponent,
     ErrorPageComponent,
     NavbarComponent,
+    FooterCComponent,
 
   ],
   imports: [
