@@ -22,7 +22,7 @@ export class LoginPageComponent implements OnInit {
   constructor(private usersService : UsersService, private router: Router) {}
 
   ngOnInit(): void {
-      localStorage.setItem('logged','false');
+      
   }
 
   public get email(){
@@ -40,8 +40,7 @@ export class LoginPageComponent implements OnInit {
       this.usersService.login(this.loginForm.value).subscribe( (data: any) => {
         alert("Usuario logeado");
         console.log(data);
-        this.usersService.addToken(data.accessToken);
-        localStorage.setItem('accessToken', data.accessToken);
+        this.usersService.setToken(data.accessToken);
         localStorage.setItem('logged', 'true');
         this.router.navigate(['home']);
       },

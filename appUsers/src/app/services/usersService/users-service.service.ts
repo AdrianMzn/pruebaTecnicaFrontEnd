@@ -30,7 +30,7 @@ export class UsersService {
     //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768
   } 
 
-  public addToken(accessToken: string){
+  public setToken(accessToken: string){
     this.headers = new HttpHeaders( {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${accessToken}`

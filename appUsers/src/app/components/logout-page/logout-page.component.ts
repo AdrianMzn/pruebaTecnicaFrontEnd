@@ -19,4 +19,11 @@ export class LogoutPageComponent implements OnInit {
     }
   }
 
+  logout(){
+    alert('Se ha cerrado sesion');
+    this.usersService.setToken('');
+    localStorage.setItem('logged', 'false');
+    this.router.navigate(['login']);
+  }
+
 }
