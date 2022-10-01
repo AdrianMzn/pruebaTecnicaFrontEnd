@@ -5,6 +5,8 @@ DECISIONES:
     
     -He añadido un campo de contraseña de confirmacion en el formulario de sign up porque es lo más común.
 
+    -He tratado de evitar que al hacerse la pantalla mas pequeña el navbar no se coloque sobre el titulo de la pagina pero no he sido capaz.
+
 
 
 TIEMPO DEDICADO:
