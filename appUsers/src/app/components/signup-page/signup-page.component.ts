@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -65,8 +66,27 @@ export class SignupPageComponent implements OnInit {
       this.usersService.signup(this.signupForm.value).subscribe( (data: any) => {
         alert("Usuario registrado");
         console.log(data)
-        this.signupForm.reset();
         this.router.navigate(['login']);
+      },
+      (error: HttpErrorResponse) => {
+          switch (error.status) {
+            case 204:
+              this.signupForm.reset();
+              alert("Data is not being sent/transmitted correctly, please check your internet connection.")
+              break;
+
+            case 409:
+              this.signupForm.get('email')?.reset();
+              this.signupForm.get('password')?.reset();
+              this.signupForm.get('passwordConfirm')?.reset();
+              alert("Email already exists")
+              break;
+
+            default:
+              break;
+          }
+
+          
       }), (error: any) => {
         console.log(error)
       }
