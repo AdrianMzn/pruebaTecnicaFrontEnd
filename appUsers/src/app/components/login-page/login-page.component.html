@@ -1,21 +1,39 @@
-<div class="container" [ngStyle]="{backgroundColor: 'pink'}">
+<div class="container divLogin">
 
-    <form [formGroup]="loginForm">
-        <label for="email">Email:</label>
-        <input type="email" formControlName="email" id="email" (focus)="emailErrors=true;"/> <br/>
-        <div *ngIf="emailErrors">
-            <div *ngIf="email?.errors?.['required']" [ngStyle]="{color: 'red'}"> Email obligatorio</div>
-            <div *ngIf="email?.errors?.['pattern']" [ngStyle]="{color: 'red'}"> Email debe contener el caracter '@' y un dominio</div>
-            <br>
+        <div class="divTituloLogin center">
+            <h2 class="tituloLogin">LOG-IN</h2>
         </div>
+        <form [formGroup]="loginForm">
+            <div class="form-group row fieldForm">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" formControlName="email" placeholder="Email: ejemplo@ejemplo.com" id="email" (focus)="emailErrors=true;" class="form-control"/> <br/>
+                    <div *ngIf="emailErrors">
+                        <div *ngIf="email?.errors?.['required']" [ngStyle]="{color: 'red'}"> Email obligatorio</div>
+                        <div *ngIf="email?.errors?.['pattern']" [ngStyle]="{color: 'red'}"> Email debe contener el caracter '@' y un dominio<br></div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group row fieldForm">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" formControlName="password" placeholder="Password" id="password" (focus)="passwordErrors=true;" class="form-control"/> <br/>
+                    <div *ngIf="passwordErrors">
+                        <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> Contraseña obligatoria</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group botonLogin">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary" (click)="login();">Login</button>
+                </div>
+            </div>
+
+        </form>
     
-        <label for="password">Password:</label>
-        <input type="password" formControlName="password" id="password" (focus)="passwordErrors=true;"  /> <br/>
-        <div *ngIf="passwordErrors">
-            <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> Contraseña obligatoria</div>
-        </div>
     
-        <button (click)="login();">Login</button>
-    </form>
-    
-  </div>
+</div>

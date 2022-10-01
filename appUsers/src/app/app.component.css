@@ -3,7 +3,7 @@ section {
     min-height: 100%;
     display: block;
     position: relative;
-    padding-bottom: 0px;
+    padding-bottom: 100px;
 }
     
 footer {
@@ -12,5 +12,5 @@ footer {
     width: 100%;
     text-align: center;
     color: grey;
-    background-color: #ffe4c4;
+    background-color: rgb(243, 233, 222);
 }
