@@ -12,5 +12,6 @@ footer {
     width: 100%;
     text-align: center;
     color: grey;
+    height: auto;
     background-color: rgb(243, 233, 222);
 }
