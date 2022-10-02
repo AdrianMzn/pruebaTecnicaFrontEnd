@@ -24,7 +24,17 @@ export class UsersService {
     console.log("Aqui creariamos el usuario: " + newUser.name + " " + newUser.surname + " " + newUser.email + " " + newUser.password );
 
     return this.http.post( this.apiURL + "/auth/sign-up", 
-                            { "name" : newUser.name, "surname": newUser.surname, "email" : newUser.email, "password": newUser.password }, 
+                            { "name": newUser.name, "surname": newUser.surname, "email": newUser.email, "password": newUser.password }, 
+                            { "headers": this.headers } );
+    
+    //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768
+  } 
+
+  public updateUser( idUser: string, newUser: any ):  Observable<any>{
+
+    console.log("Modificamos el usuario: " + this.apiURL + "/users/" + idUser);
+    return this.http.put( this.apiURL + "/users/" + idUser, 
+                            { "email": newUser.email, "password": newUser.password, "name": newUser.name, "surname": newUser.surname, "id": idUser }, 
                             { "headers": this.headers } );
     
     //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768

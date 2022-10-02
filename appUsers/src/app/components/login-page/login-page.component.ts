@@ -41,13 +41,14 @@ export class LoginPageComponent implements OnInit {
         alert("Usuario logeado");
         console.log(data);
         this.usersService.setToken(data.accessToken);
-        localStorage.setItem('logged', 'true');
-        localStorage.setItem('token', data.accessToken);
-        localStorage.setItem('refreshToken', data.refreshToken);
+        sessionStorage.setItem('logged', 'true');
+        sessionStorage.setItem('token', data.accessToken);
+        sessionStorage.setItem('refreshToken', data.refreshToken);
         this.router.navigate(['home']);
       },
       (error: HttpErrorResponse) => {
           switch (error.status) {
+
             case 404:
               alert("User email not found or password invalid")
               break;

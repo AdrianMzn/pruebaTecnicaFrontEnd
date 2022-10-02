@@ -9,6 +9,8 @@ DECISIONES:
 
     -No permito que se modifiquen el id de los usuarios porque nose como afectaria eso a la base de datos.
 
+    -Al recargar la pagina si el usuario estaba logeado continuará logeado
+
 
 
 TIEMPO DEDICADO:

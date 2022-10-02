@@ -13,7 +13,7 @@ export class LogoutPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (localStorage.getItem('logged') == 'false'){
+    if (sessionStorage.getItem('logged') == 'false'){
       this.router.navigate(['login']);
       alert('Necesitas iniciar sesion para acceder a esta pagina');
     }
@@ -22,7 +22,7 @@ export class LogoutPageComponent implements OnInit {
   logout(){
     alert('Se ha cerrado sesion');
     this.usersService.setToken('');
-    localStorage.setItem('logged', 'false');
+    sessionStorage.setItem('logged', 'false');
     this.router.navigate(['login']);
   }
 

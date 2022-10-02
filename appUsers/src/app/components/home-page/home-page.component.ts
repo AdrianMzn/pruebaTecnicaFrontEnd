@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
     passwordConfirm: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     surname: new FormControl('', [Validators.required]),
-    id: new FormControl('boolean', [Validators.required])
+    id: new FormControl('')
   }, [CustomValidators.MatchValidator('password', 'passwordConfirm')]);
 
 
@@ -35,9 +35,9 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (localStorage.getItem('logged') == 'true'){
-      console.log("Token: " + localStorage.getItem('token'));
-      console.log("refreshToken: " + localStorage.getItem('refreshToken'));
+    if (sessionStorage.getItem('logged') == 'true'){
+      console.log("Token: " + sessionStorage.getItem('token'));
+      console.log("refreshToken: " + sessionStorage.getItem('refreshToken'));
       this.usersService.getInfo().subscribe( (data: any) => {
         console.log(data);
         this.userInfo = data;
@@ -74,6 +74,10 @@ export class HomePageComponent implements OnInit {
     return this.updateForm.get('surname');
   }
 
+  public get id(){
+    return this.updateForm.get('id');
+  }
+
   get passwordMatchError() {
     return (
       this.updateForm.getError('mismatch')
@@ -81,7 +85,40 @@ export class HomePageComponent implements OnInit {
   }
 
   update(){
+    if( this.updateForm.valid ){
+
+      this.usersService.updateUser(this.userInfo.id, this.updateForm.value).subscribe( (data: any) => {
+        alert("Usuario actual modificado, se cerrará esta sesion.");
+        
+        sessionStorage.setItem('logged','false');
+        this.router.navigate(['login']);
+      },
+      (error: HttpErrorResponse) => {
+          switch (error.status) {
+            case 404:
+              this.updateForm.reset();
+              alert("User not found.")
+              break;
+
+            default:
+              alert("Unknown error")
+              break;
+          }
+
+          
+      }), (error: any) => {
+        console.log(error)
+      }
+
+    }
+    else{
+      console.log("No es valido");
+      this.emailErrors = true; 
+      this.passwordErrors=true; 
+      this.nameErrors=true; 
+      this.surnameErrors=true;
+      this.passwordConfirmErrors=true;
+    }
 
   }
-
 }

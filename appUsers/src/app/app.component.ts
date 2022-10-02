@@ -20,8 +20,8 @@ export class AppComponent {
         event.id === 1 &&
         event.url === event.urlAfterRedirects
       ) { //Si ha recargado la pagina y estaba logeado
-          if( localStorage.getItem('logged') == 'true' ){
-            this.usersService.setToken(localStorage.getItem('token') || "[]" );
+          if( sessionStorage.getItem('logged') == 'true' ){
+            this.usersService.setToken(sessionStorage.getItem('token') || "[]" );
           }
           
           //alert("Refresh");
@@ -34,7 +34,6 @@ export class AppComponent {
   }
   
 }
-
 
 
 

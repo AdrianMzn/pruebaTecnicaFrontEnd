@@ -86,7 +86,7 @@
                 <div class="form-group row fieldForm">
                     <label for="passwordConfirm" class="col-sm-2 col-form-label">Confirm password</label>
                     <div class="col-sm-10">
-                        <input type="passwordConfirm" formControlName="passwordConfirm" placeholder="Confirm password" id="passwordConfirm" (focus)="passwordConfirmErrors=true;" class="form-control"/>
+                        <input type="password" formControlName="passwordConfirm" placeholder="Confirm password" id="passwordConfirm" (focus)="passwordConfirmErrors=true;" class="form-control"/>
                         <div *ngIf="passwordMatchError" [ngStyle]="{color: 'red'}"> 
                             Password does not match
                         </div>
@@ -96,7 +96,7 @@
                 <div class="form-group row fieldForm">
                     <label for="id" class="col-sm-2 col-form-label">ID</label>
                     <div class="col-sm-10">
-                        <input type="id" disabled placeholder="{{userInfo.id}}" class="form-control"/>
+                        <input type="id" disabled placeholder="{{userInfo.id}}" value="{{userInfo.id}}" class="form-control"/>
                     </div>
                 </div>
         

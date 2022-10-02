@@ -15,7 +15,7 @@ export class UsersPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (localStorage.getItem('logged') == 'true'){
+    if (sessionStorage.getItem('logged') == 'true'){
       this.usersService.getUsers().subscribe( (data: any) => {
         this.usuarios = data.items;
         console.log(this.usuarios);
