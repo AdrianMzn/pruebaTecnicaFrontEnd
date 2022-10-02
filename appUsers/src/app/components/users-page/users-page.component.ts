@@ -15,11 +15,7 @@ export class UsersPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (localStorage.getItem('logged') == 'false'){
-      alert('Necesitas iniciar sesion para acceder a esta pagina');
-      this.router.navigate(['login']);
-    }
-    else{
+    if (localStorage.getItem('logged') == 'true'){
       this.usersService.getUsers().subscribe( (data: any) => {
         this.usuarios = data.items;
         console.log(this.usuarios);
@@ -27,6 +23,11 @@ export class UsersPageComponent implements OnInit {
       }), (error: any) => {
         console.log(error);
       }
+    }
+    else{
+
+      alert('Necesitas iniciar sesion para acceder a esta pagina');
+      this.router.navigate(['login']);
     }
   }
 

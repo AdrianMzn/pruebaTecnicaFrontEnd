@@ -7,6 +7,8 @@ DECISIONES:
 
     -He tratado de evitar que al hacerse la pantalla mas pequeña el navbar no se coloque sobre el titulo de la pagina pero no he sido capaz.
 
+    -No permito que se modifiquen el id de los usuarios porque nose como afectaria eso a la base de datos.
+
 
 
 TIEMPO DEDICADO:

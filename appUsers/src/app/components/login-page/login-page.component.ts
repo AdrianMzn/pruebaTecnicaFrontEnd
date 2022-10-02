@@ -42,6 +42,8 @@ export class LoginPageComponent implements OnInit {
         console.log(data);
         this.usersService.setToken(data.accessToken);
         localStorage.setItem('logged', 'true');
+        localStorage.setItem('token', data.accessToken);
+        localStorage.setItem('refreshToken', data.refreshToken);
         this.router.navigate(['home']);
       },
       (error: HttpErrorResponse) => {
@@ -55,6 +57,7 @@ export class LoginPageComponent implements OnInit {
               break;
 
             default:
+              alert("Unknown error")
               break;
           }
 

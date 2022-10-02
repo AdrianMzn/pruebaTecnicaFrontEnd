@@ -83,6 +83,7 @@ export class SignupPageComponent implements OnInit {
               break;
 
             default:
+              alert("Unknown error")
               break;
           }
 

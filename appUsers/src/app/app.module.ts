@@ -17,6 +17,8 @@ import { UsersService } from './services/usersService/users-service.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterCComponent } from './components/footer-c/footer-c.component';
 
+
+
 const misRutas: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'}, 
   {path:'login', component:LoginPageComponent},
@@ -50,4 +52,6 @@ const misRutas: Routes = [
   providers: [UsersService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}
