@@ -9,7 +9,11 @@ import { UsersService } from 'src/app/services/usersService/users-service.servic
 })
 export class LogoutPageComponent implements OnInit {
 
-  constructor(private usersService : UsersService, private router: Router) { }
+  name: string = '';
+  
+  constructor(private usersService : UsersService, private router: Router) { 
+    this.name = sessionStorage.getItem('name') || '';
+  }
 
   ngOnInit(): void {
 

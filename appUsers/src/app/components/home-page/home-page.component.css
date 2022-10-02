@@ -7,22 +7,6 @@
     width: auto;
 }
 
-.bienvenida{
-    color: #adb7bd; 
-    font-family: 'Lucida Sans', Arial, sans-serif;
-     font-size: 16px; 
-     line-height: 26px; 
-     text-indent: 30px; 
-     margin: 0;
-     
-}
-
-.infoDecoration { 
-    color: #fe921f; 
-    text-decoration: underline; 
-    display:inline;
-}
-
 .divUserManage{
     display: grid; 
     grid-template-columns: 1fr 1fr; 

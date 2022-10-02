@@ -78,3 +78,33 @@ footer {
   margin-right: 20px;
   margin-bottom: 25px;
 }
+
+.bienvenida{
+  color: #adb7bd; 
+  font-family: 'Lucida Sans', Arial, sans-serif;
+   font-size: 16px; 
+   line-height: 26px; 
+   text-indent: 30px; 
+   margin: 0;
+   
+}
+
+.despedida{
+  color: #adb7bd; 
+  font-family: 'Lucida Sans', Arial, sans-serif;
+   font-size: 16px; 
+   line-height: 26px; 
+   text-indent: 30px; 
+
+   margin-top: 60px;
+   margin-bottom: 30px;
+   
+}
+
+
+
+.infoDecoration { 
+  color: #fe921f; 
+  text-decoration: underline; 
+  display:inline;
+}

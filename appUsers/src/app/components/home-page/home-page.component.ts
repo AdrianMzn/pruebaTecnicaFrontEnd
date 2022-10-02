@@ -40,6 +40,7 @@ export class HomePageComponent implements OnInit {
       console.log("refreshToken: " + sessionStorage.getItem('refreshToken'));
       this.usersService.getInfo().subscribe( (data: any) => {
         console.log(data);
+        sessionStorage.setItem('name', data.name);
         this.userInfo = data;
       }), (error: any) => {
         console.log(error);
