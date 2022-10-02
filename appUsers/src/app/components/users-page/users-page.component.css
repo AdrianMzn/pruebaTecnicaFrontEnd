@@ -1,0 +1,14 @@
+.divUsers{
+    margin-top: 60px;
+}
+
+.centerRow{
+    display: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.columnItem{
+    margin-bottom: 30px;
+}

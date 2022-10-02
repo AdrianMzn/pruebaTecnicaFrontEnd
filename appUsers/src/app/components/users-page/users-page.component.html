@@ -1,9 +1,17 @@
-
-<div *ngFor="let user of this.usuarios;">
-    <h2>------Usuario------</h2>
-    <p>Name: {{user["name"]}}</p>
-    <p>Surname: {{user["surname"]}}</p>
-    <p>Email: {{user["email"]}}</p>
-    <br>
+<div class="container divUsers">
+    <div class="row centerRow">
+        <div *ngFor="let user of this.usuarios" class="col-md-4 columnItem ">      
+            <h2>------Usuario------</h2>
+            <p>Name: {{user["name"]}}</p>
+            <p>Surname: {{user["surname"]}}</p>
+            <p>Email: {{user["email"]}}</p>
+        </div>
+      </div>
 </div>
+
+
+
+
+
+
 
