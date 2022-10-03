@@ -6,9 +6,37 @@
     display: center;
     align-items: center;
     text-align: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .columnItem{
     margin-bottom: 30px;
+    width: 280px;
+    margin: 15px;
+    height: max-content;
+
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    border-radius: 20px;
+    box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position:relative;
+    display:block;
+}
+
+.divBotones{
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.textoPermisos{
+    color: #adb7bd; 
+    font-family: 'Lucida Sans', Arial, sans-serif;
 }

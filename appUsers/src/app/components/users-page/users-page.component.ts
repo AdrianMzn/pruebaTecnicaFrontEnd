@@ -31,4 +31,15 @@ export class UsersPageComponent implements OnInit {
     }
   }
 
+  esAdmin(email: string) : boolean {
+    return email.includes('@hiberus');
+  }
+
+  hasPermissions(email: string) : boolean {
+    if (email.includes('@hiberus') ){
+      return sessionStorage.getItem('email')?.includes('@hiberus') || false;
+    }
+    return true;
+  }
+
 }

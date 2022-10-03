@@ -1,17 +1,73 @@
 <div class="container divUsers">
-    <div class="row centerRow">
-        <div *ngFor="let user of this.usuarios" class="col-md-4 columnItem ">      
-            <h2>------Usuario------</h2>
-            <p>Name: {{user["name"]}}</p>
-            <p>Surname: {{user["surname"]}}</p>
-            <p>Email: {{user["email"]}}</p>
+    <div class="row centerRow ">
+        <div *ngFor="let user of this.usuarios;let i=index;" class="col-md-4 columnItem">      
+
+            <div *ngIf="esAdmin( user['email'] );else other_content">
+                <svg style="margin-top: 30px; margin-bottom: 30px;" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                    <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                    <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
+                </svg> <br>
+
+                <div class="infoDecoration" style="margin-top: 30px;">  
+                    Administrator
+                </div> 
+            </div>
+
+            <ng-template #other_content>
+                <svg style="margin-top: 30px; margin-bottom: 30px;" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                </svg> <br>
+
+                <div class="infoDecoration2" style="margin-top: 30px;">  
+                    User
+                </div> 
+            </ng-template>
+
+
+            <div class="form-group row fieldForm" style="margin-top: 30px;">
+                <label class="col-sm-3 col-form-label">Name</label> 
+                <div class="col-sm-7">
+                    <input disabled placeholder="{{user['name']}}" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group row fieldForm">
+                <label class="col-sm-4 col-form-label">Surname</label> 
+                <div class="col-sm-8">
+                    <input disabled placeholder="{{user['surname']}}" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group row fieldForm">
+                <label class="col-form-label">Email</label> <br>
+                <div >
+                    <input disabled placeholder="{{user['email']}}" class="form-control"/>
+                </div>
+            </div>
+
+            <div *ngIf="hasPermissions( user['email'] );else other_content2" class="divBotones row">
+
+                <div class="col-sm-2"></div>
+                
+                <div  class="col-sm-4" >
+                    <button type="button" class="btn btn-warning">Update</button>
+                </div>
+
+                <div  class="col-sm-4" >
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+                
+            </div>
+
+            <ng-template #other_content2>
+                <div class="divBotones center textoPermisos">
+                    You don't have enough permissions for this action.
+                </div>
+            </ng-template>
+
         </div>
-      </div>
+    </div>
 </div>
-
-
-
-
 
 
 
