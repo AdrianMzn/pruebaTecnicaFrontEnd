@@ -11,7 +11,8 @@ import { SignupPageComponent } from './components/signup-page/signup-page.compon
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgbdModalBasicModule } from './components/modal-basic/modal-basic.module'; 
+import { NgbdModalUpdateModule } from './components/modal-update/modal-update.module'; 
+import { NgbdModalDeleteModule } from './components/modal-delete/modal-delete.module'; 
 
 
 import { UsersService } from './services/usersService/users-service.service';
@@ -47,7 +48,8 @@ const misRutas: Routes = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbdModalBasicModule
+    NgbdModalUpdateModule,
+    NgbdModalDeleteModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]

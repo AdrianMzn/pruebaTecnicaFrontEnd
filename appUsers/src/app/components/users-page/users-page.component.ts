@@ -47,30 +47,4 @@ export class UsersPageComponent implements OnInit {
     }
     return true;
   }
-
-  deleteUser(user: any){
-
-    if(confirm("Are you sure you want to delete " + user['name'] + " " + user['surname'] + " profile? ")) {
-
-      this.usersService.deleteUser(user['id']).subscribe( (data: any) => {
-        alert("The user has been deleted.");
-        window.location.reload();
-      },
-      (error: HttpErrorResponse) => {
-          switch (error.status) {
-
-            case 404:
-              alert("User not found")
-              break;
-
-            default:
-              alert("Unknown error")
-              break;
-          }
-      }), (error: any) => {
-        console.log(error);
-      }
-    }
-  }
-
 }

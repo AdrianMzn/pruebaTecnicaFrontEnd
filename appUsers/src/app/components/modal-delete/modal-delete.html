@@ -1,0 +1,22 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile delete</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <p><strong>Are you sure you want to delete <span class="text-primary">{{userName}}</span> profile?</strong></p>
+        <p>All information associated to this user profile will be permanently deleted.
+        <span class="text-danger">This operation can not be undone.</span>
+        </p>
+
+        <div class="form-group botonForm" style="margin-top: 50px;">
+            <button type="submit" class="btn btn-danger" (click)="delete();">I am sure to delete</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </ng-template>
+  
+  <button type="button" class="btn btn-danger" (click)="open(content)">Delete</button>
+
+  

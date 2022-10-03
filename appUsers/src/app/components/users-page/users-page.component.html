@@ -50,11 +50,11 @@
                 <div class="col-sm-2"></div>
                 
                 <div  class="col-sm-4" >
-                    <ngbd-modal-basic [userToUpdate]="user"></ngbd-modal-basic>
+                    <ngbd-modal-update [userToUpdate]="user"></ngbd-modal-update>
                 </div>
 
                 <div  class="col-sm-4" >
-                    <button type="button" class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+                    <ngbd-modal-delete [userToUpdate]="user['id']" [userName]="user['name'] + ' ' + user['surname']"></ngbd-modal-delete>
                 </div>
 
                 

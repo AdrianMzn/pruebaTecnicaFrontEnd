@@ -7,10 +7,10 @@ import { UsersService } from 'src/app/services/usersService/users-service.servic
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'ngbd-modal-basic',
-  templateUrl: './modal-basic.html'
+  selector: 'ngbd-modal-update',
+  templateUrl: './modal-update.html'
 })
-export class NgbdModalBasic {
+export class NgbdModalUpdate {
     
   closeResult = '';
 
