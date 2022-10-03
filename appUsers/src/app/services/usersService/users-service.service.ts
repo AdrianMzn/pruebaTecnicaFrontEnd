@@ -30,11 +30,11 @@ export class UsersService {
     //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768
   } 
 
-  public updateUser( idUser: string, newUser: any ):  Observable<any>{
+  public updateUser( idUser: string, emailUser: string, newUser: any ):  Observable<any>{
 
     console.log("Modificamos el usuario: " + this.apiURL + "/users/" + idUser);
     return this.http.put( this.apiURL + "/users/" + idUser, 
-                            { "email": newUser.email, "password": newUser.password, "name": newUser.name, "surname": newUser.surname, "id": idUser }, 
+                            { "email": emailUser, "password": newUser.password, "name": newUser.name, "surname": newUser.surname, "id": idUser }, 
                             { "headers": this.headers } );
     
     //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768

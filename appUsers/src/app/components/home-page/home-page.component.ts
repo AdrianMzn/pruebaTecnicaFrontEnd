@@ -15,16 +15,12 @@ export class HomePageComponent implements OnInit {
   userInfo: any = [];
 
   updateForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.pattern('.*@.+[\.].+') ] ),
     password: new FormControl('', [Validators.required]),
     passwordConfirm: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
-    surname: new FormControl('', [Validators.required]),
-    id: new FormControl('')
+    surname: new FormControl('', [Validators.required])
   }, [CustomValidators.MatchValidator('password', 'passwordConfirm')]);
 
-
-  emailErrors: boolean = false;
   passwordErrors: boolean = false;
   nameErrors: boolean = false;
   surnameErrors: boolean = false;
@@ -56,10 +52,6 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  public get email(){
-    return this.updateForm.get('email');
-  }
-
   public get password(){
     return this.updateForm.get('password');
   }
@@ -76,10 +68,6 @@ export class HomePageComponent implements OnInit {
     return this.updateForm.get('surname');
   }
 
-  public get id(){
-    return this.updateForm.get('id');
-  }
-
   get passwordMatchError() {
     return (
       this.updateForm.getError('mismatch')
@@ -89,7 +77,7 @@ export class HomePageComponent implements OnInit {
   update(){
     if( this.updateForm.valid ){
 
-      this.usersService.updateUser(this.userInfo.id, this.updateForm.value).subscribe( (data: any) => {
+      this.usersService.updateUser(this.userInfo.id, this.userInfo.email, this.updateForm.value).subscribe( (data: any) => {
         alert("Usuario actual modificado, se cerrará esta sesion.");
         
         sessionStorage.setItem('logged','false');
@@ -115,7 +103,6 @@ export class HomePageComponent implements OnInit {
     }
     else{
       console.log("No es valido");
-      this.emailErrors = true; 
       this.passwordErrors=true; 
       this.nameErrors=true; 
       this.surnameErrors=true;

@@ -21,6 +21,8 @@ export class UsersPageComponent implements OnInit {
         this.usuarios = data.items;
         this.usuarios.forEach((element,index)=>{
             if( element.email==sessionStorage.getItem('email') ) this.usuarios.splice(index,1);
+
+            console.log( "Su contraseña es " + element.password )
         });
         console.log(this.usuarios);
         
@@ -48,7 +50,7 @@ export class UsersPageComponent implements OnInit {
 
   deleteUser(user: any){
 
-    if(confirm("Are you sure to delete "+ user['name'])) {
+    if(confirm("Are you sure you want to delete " + user['name'] + " " + user['surname'] + " profile? ")) {
 
       this.usersService.deleteUser(user['id']).subscribe( (data: any) => {
         alert("The user has been deleted.");

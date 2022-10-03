@@ -64,12 +64,8 @@
                 <div class="form-group row fieldForm">
                     <label for="email" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="email" formControlName="email" placeholder="{{userInfo.email}}" id="email" (focus)="emailErrors=true;" class="form-control"/> 
-                        <div *ngIf="emailErrors">
-                            <div *ngIf="email?.errors?.['required']" [ngStyle]="{color: 'red'}"> Email obligatorio</div>
-                            <div *ngIf="email?.errors?.['pattern']" [ngStyle]="{color: 'red'}"> Email debe contener el caracter '@' y un dominio<br></div>
-                            
-                        </div>
+                        <input type="email" disabled placeholder="{{userInfo.email}}" id="email" class="form-control"/> 
+
                     </div>
                 </div>
                 

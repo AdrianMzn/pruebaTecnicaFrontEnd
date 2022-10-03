@@ -1,0 +1,75 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="updateForm">
+            <div class="form-group row fieldForm">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="name" formControlName="name" placeholder="{{userToUpdate['name']}}" id="email" (focus)="nameErrors=true;" class="form-control"/>
+                    <div *ngIf="nameErrors">
+                        <div *ngIf="name?.errors?.['required']" [ngStyle]="{color: 'red'}"> Name obligatorio</div>    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group row fieldForm">
+                <label for="surname" class="col-sm-2 col-form-label">Surname</label>
+                <div class="col-sm-10">
+                    <input type="surname" formControlName="surname" placeholder="{{userToUpdate['surname']}}" id="surname" (focus)="surnameErrors=true;" class="form-control"/>
+                    <div *ngIf="surnameErrors">
+                        <div *ngIf="surname?.errors?.['required']" [ngStyle]="{color: 'red'}"> Surname obligatorio</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group row fieldForm">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" disabled placeholder="{{userToUpdate['email']}}" id="email" class="form-control"/> 
+                </div>
+            </div>
+            
+            <div class="form-group row fieldForm">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" formControlName="password" placeholder="Password" id="password" (focus)="passwordErrors=true;" class="form-control"/>
+                    <div *ngIf="passwordErrors">
+                        <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> Contraseña obligatoria</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group row fieldForm">
+                <label for="passwordConfirm" class="col-sm-2 col-form-label">Confirm password</label>
+                <div class="col-sm-10">
+                    <input type="password" formControlName="passwordConfirm" placeholder="Confirm password" id="passwordConfirm" (focus)="passwordConfirmErrors=true;" class="form-control"/>
+                    <div *ngIf="passwordMatchError" [ngStyle]="{color: 'red'}"> 
+                        Password does not match
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row fieldForm">
+                <label for="id" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                    <input type="id" disabled placeholder="{{userToUpdate['id']}}" class="form-control"/>
+                </div>
+            </div>
+    
+    
+            <div class="form-group botonForm" style="margin-top: 50px;">
+                <button type="submit" class="btn btn-warning" (click)="update();">Finish update</button>
+            </div>
+    
+        </form>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </ng-template>
+  
+  <button type="button" class="btn btn-warning" (click)="open(content)">Update</button>
+
+  

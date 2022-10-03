@@ -50,12 +50,14 @@
                 <div class="col-sm-2"></div>
                 
                 <div  class="col-sm-4" >
-                    <button type="button" class="btn btn-warning">Update</button>
+                    <ngbd-modal-basic [userToUpdate]="user"></ngbd-modal-basic>
                 </div>
 
                 <div  class="col-sm-4" >
                     <button type="button" class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
                 </div>
+
+                
                 
             </div>
 
