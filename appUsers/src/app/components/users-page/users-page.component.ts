@@ -18,6 +18,9 @@ export class UsersPageComponent implements OnInit {
     if (sessionStorage.getItem('logged') == 'true'){
       this.usersService.getUsers().subscribe( (data: any) => {
         this.usuarios = data.items;
+        this.usuarios.forEach((element,index)=>{
+            if( element.email==sessionStorage.getItem('email') ) this.usuarios.splice(index,1);
+        });
         console.log(this.usuarios);
         
       }), (error: any) => {
@@ -40,6 +43,10 @@ export class UsersPageComponent implements OnInit {
       return sessionStorage.getItem('email')?.includes('@hiberus') || false;
     }
     return true;
+  }
+
+  deleteUser(user: any){
+    alert("Se eliminará el usuario " + user['name'])
   }
 
 }
