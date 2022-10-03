@@ -40,6 +40,15 @@ export class UsersService {
     //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768
   } 
 
+  public deleteUser( idUser: string ):  Observable<any>{
+
+    console.log("Modificamos el usuario: " + this.apiURL + "/users/" + idUser);
+    return this.http.delete( this.apiURL + "/users/" + idUser, 
+                            { "headers": this.headers } );
+    
+    //EMPTY_RESPONSE => https://ncu.libanswers.com/faq/221768
+  } 
+
   public setToken(accessToken: string){
     this.headers = new HttpHeaders( {
             'Content-Type': 'application/json',

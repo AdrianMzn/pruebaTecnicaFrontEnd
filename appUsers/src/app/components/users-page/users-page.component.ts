@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/usersService/users-service.service';
@@ -46,7 +47,28 @@ export class UsersPageComponent implements OnInit {
   }
 
   deleteUser(user: any){
-    alert("Se eliminará el usuario " + user['name'])
+
+    if(confirm("Are you sure to delete "+ user['name'])) {
+
+      this.usersService.deleteUser(user['id']).subscribe( (data: any) => {
+        alert("The user has been deleted.");
+        window.location.reload();
+      },
+      (error: HttpErrorResponse) => {
+          switch (error.status) {
+
+            case 404:
+              alert("User not found")
+              break;
+
+            default:
+              alert("Unknown error")
+              break;
+          }
+      }), (error: any) => {
+        console.log(error);
+      }
+    }
   }
 
 }
