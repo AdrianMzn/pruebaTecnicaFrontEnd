@@ -37,7 +37,7 @@
 
         <div class="container divUserUpdate">
             <div class="divTitulo center">
-                <h2 class="titulo2">Update user</h2>
+                <h2 class="titulo2">Manage user</h2>
             </div>
 
             <form [formGroup]="updateForm">
@@ -97,9 +97,18 @@
                 </div>
         
         
-                <div class="form-group botonForm">
-                    <div class="col-sm-12">
-                        <button type="submit" class="btn btn-warning" (click)="update();">Update</button>
+                <div class="form-group botonForm" style="margin-top: 50px">
+                    <div class="row">
+
+                        <div class="col-sm-3"></div>
+
+                        <div  class="col-sm-3" >
+                            <button type="submit" class="btn btn-warning" (click)="update();">Update</button>
+                        </div>
+        
+                        <div  class="col-sm-3" >
+                            <ngbd-modal-delete [userToUpdate]="userInfo.id" [userName]="userInfo.name + ' ' + userInfo.surname"></ngbd-modal-delete>
+                        </div>
                     </div>
                 </div>
         

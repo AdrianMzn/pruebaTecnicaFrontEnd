@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'src/app/validators/customValidators';
 import { UsersService } from 'src/app/services/usersService/users-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngbd-modal-delete',
@@ -18,7 +19,7 @@ export class NgbdModalDelete {
   @Input() userName: string;
   
 
-  constructor(private modalService: NgbModal, private usersService : UsersService) {}
+  constructor(private modalService: NgbModal, private usersService : UsersService, private router: Router) {}
 
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -40,8 +41,17 @@ export class NgbdModalDelete {
 
   delete(){
     this.usersService.deleteUser(this.userToUpdate).subscribe( (data: any) => {
-      alert("The user has been deleted.");
-      window.location.reload();
+
+      if( this.userToUpdate == sessionStorage.getItem('id') ){
+        alert("Actual user has been deleted, the session will be closed.");
+        sessionStorage.setItem('logged','false');
+        this.router.navigate(['login']);
+      }
+      else{
+        alert("The user has been deleted.");
+        window.location.reload();
+      }
+      
     },
     (error: HttpErrorResponse) => {
         switch (error.status) {

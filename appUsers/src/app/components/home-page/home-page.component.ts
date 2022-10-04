@@ -37,6 +37,7 @@ export class HomePageComponent implements OnInit {
       this.usersService.getInfo().subscribe( (data: any) => {
         console.log(data);
         sessionStorage.setItem('name', data.name);
+        sessionStorage.setItem('id', data.id);
         sessionStorage.setItem('email',data.email);
         this.userInfo = data;
       }), (error: any) => {
