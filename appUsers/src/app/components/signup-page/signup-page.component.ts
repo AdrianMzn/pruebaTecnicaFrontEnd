@@ -62,9 +62,8 @@ export class SignupPageComponent implements OnInit {
 
     if( this.signupForm.valid ){
 
-      console.log("Registramos: " + this.signupForm.get('email')?.value + " " + this.signupForm.get('password')?.value )
       this.usersService.signup(this.signupForm.value).subscribe( (data: any) => {
-        alert("Usuario registrado");
+        alert("The user has been created");
         console.log(data)
         this.router.navigate(['login']);
       },

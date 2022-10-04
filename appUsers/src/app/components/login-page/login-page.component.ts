@@ -36,9 +36,7 @@ export class LoginPageComponent implements OnInit {
   login(){
   
     if( this.loginForm.valid ){
-      console.log("Logeamos: " + this.loginForm.get('email')?.value + " " + this.loginForm.get('password')?.value )
       this.usersService.login(this.loginForm.value).subscribe( (data: any) => {
-        alert("Usuario logeado");
         console.log(data);
         this.usersService.setToken(data.accessToken);
         sessionStorage.setItem('logged', 'true');

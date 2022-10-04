@@ -13,7 +13,7 @@ export class UsersService {
   constructor(private http:HttpClient) { }
 
   public login( user: any ): Observable<any>{
-      console.log("Aqui logeariamos el usuario: " + user.email + " " + user.password )
+      console.log("Logeamos el usuario: " + user.email + " " + user.password )
 
       return this.http.post( this.apiURL + "/auth/log-in", 
                             user, 
@@ -21,7 +21,7 @@ export class UsersService {
   }
 
   public signup( newUser: any ):  Observable<any>{
-    console.log("Aqui creariamos el usuario: " + newUser.name + " " + newUser.surname + " " + newUser.email + " " + newUser.password );
+    console.log("Creamos el usuario: " + newUser.name + " " + newUser.surname + " " + newUser.email );
 
     return this.http.post( this.apiURL + "/auth/sign-up", 
                             { "name": newUser.name, "surname": newUser.surname, "email": newUser.email, "password": newUser.password }, 
@@ -32,7 +32,7 @@ export class UsersService {
 
   public updateUser( idUser: string, emailUser: string, newUser: any ):  Observable<any>{
 
-    console.log("Modificamos el usuario: " + this.apiURL + "/users/" + idUser);
+    console.log("Modificamos el usuario: " + idUser);
     return this.http.put( this.apiURL + "/users/" + idUser, 
                             { "email": emailUser, "password": newUser.password, "name": newUser.name, "surname": newUser.surname, "id": idUser }, 
                             { "headers": this.headers } );
@@ -42,7 +42,7 @@ export class UsersService {
 
   public deleteUser( idUser: string ):  Observable<any>{
 
-    console.log("Modificamos el usuario: " + this.apiURL + "/users/" + idUser);
+    console.log("Eliminamos el usuario: " + idUser);
     return this.http.delete( this.apiURL + "/users/" + idUser, 
                             { "headers": this.headers } );
     
@@ -57,9 +57,7 @@ export class UsersService {
   }
 
   public getInfo():  Observable<any>{
-    console.log("Obtenemos informacion de mi usuario");
-
-    console.log( this.headers);
+    console.log("Obtenemos la informacion de mi usuario");
 
     return this.http.get( this.apiURL + "/users/me", 
                             { "headers": this.headers } );
@@ -67,9 +65,7 @@ export class UsersService {
   } 
 
   public getUsers():  Observable<any>{
-    console.log("Obtenemos informacion de todos los usuarios");
-
-    console.log( this.headers);
+    console.log("Obtenemos la informacion de todos los usuarios");
 
     return this.http.get( this.apiURL + "/users", 
                             { "headers": this.headers } );

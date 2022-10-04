@@ -52,7 +52,6 @@ export class NgbdModalUpdate {
     if( this.updateForm.valid ){
 
         this.usersService.updateUser(this.userToUpdate['id'], this.userToUpdate['email'], this.updateForm.value).subscribe( (data: any) => {
-          alert("El usuario " + this.userToUpdate['id'] + " va ha ser modificado.");
           
         },
         (error: HttpErrorResponse) => {
@@ -74,7 +73,6 @@ export class NgbdModalUpdate {
   
       }
       else{
-        console.log("No es valido");
         this.passwordErrors=true; 
         this.nameErrors=true; 
         this.surnameErrors=true;

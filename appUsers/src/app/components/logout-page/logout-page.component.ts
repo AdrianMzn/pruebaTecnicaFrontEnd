@@ -18,13 +18,13 @@ export class LogoutPageComponent implements OnInit {
   ngOnInit(): void {
 
     if (sessionStorage.getItem('logged') != 'true'){
-      alert('Necesitas iniciar sesion para acceder a esta pagina');
+      alert('You need to login to access this page.');
       this.router.navigate(['login']);
     }
   }
 
   logout(){
-    alert('Se ha cerrado sesion');
+    alert('You have been logged out.');
     this.usersService.setToken('');
     sessionStorage.setItem('logged', 'false');
     this.router.navigate(['login']);

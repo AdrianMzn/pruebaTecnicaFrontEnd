@@ -32,8 +32,6 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
 
     if (sessionStorage.getItem('logged') == 'true'){
-      console.log("Token: " + sessionStorage.getItem('token'));
-      console.log("refreshToken: " + sessionStorage.getItem('refreshToken'));
       this.usersService.getInfo().subscribe( (data: any) => {
         console.log(data);
         sessionStorage.setItem('name', data.name);
@@ -46,7 +44,7 @@ export class HomePageComponent implements OnInit {
 
     }
     else{
-      alert('Necesitas iniciar sesion para acceder a esta pagina');
+      alert('You need to login to access this page.');
       this.router.navigate(['login']);
       
     }
@@ -103,7 +101,6 @@ export class HomePageComponent implements OnInit {
 
     }
     else{
-      console.log("No es valido");
       this.passwordErrors=true; 
       this.nameErrors=true; 
       this.surnameErrors=true;

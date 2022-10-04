@@ -21,8 +21,6 @@ export class UsersPageComponent implements OnInit {
         this.usuarios = data.items;
         this.usuarios.forEach((element,index)=>{
             if( element.email==sessionStorage.getItem('email') ) this.usuarios.splice(index,1);
-
-            console.log( "Su contraseña es " + element.password )
         });
         console.log(this.usuarios);
         
@@ -32,7 +30,7 @@ export class UsersPageComponent implements OnInit {
     }
     else{
 
-      alert('Necesitas iniciar sesion para acceder a esta pagina');
+      alert('You need to login to access this page.');
       this.router.navigate(['login']);
     }
   }
