@@ -37,10 +37,10 @@ TIEMPO DEDICADO:
         paginas si no esta logueado, footer añadido con estilos y obtener la lista de usuarios completa. - 6h
     -1/09/2022 Modificacion de estilos de login, signup, trabajar en que el navbar sea mas responsive y gestionar errores que devuelve la API. - 3h
     -2/09/2022 Añadidos Validators en los formularios de login y signup, modificacion de estilos en las pantallas de Home, Logout y Users, ahora cuando
-        se recarga pantalla el usuario seguirá logueado. 4h
+        se recarga pantalla el usuario seguirá logueado. - 4h
     -3/09/2022 Modificacion de estilos en todas las paginas y correcciones responsive, tratado de usar modales sin éxito. - 2h
     -4/09/2022 Añadidos modales de modificacion y eliminacion de usuarios, eliminación de logs y traduccion de algunos alerts a ingles, modificacion
-        de estilos del navbar y de las paginas Home, Login y Signup, añadidos filtros en la pagina de Users. -6h
+        de estilos del navbar y de las paginas Home, Login y Signup, añadidos filtros en la pagina de Users. - 6h
 
     
     Total horas dedicadas: 24 horas
