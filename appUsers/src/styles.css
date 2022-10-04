@@ -114,6 +114,14 @@ footer {
   display:inline;
 }
 
+.infoError {
+  color: #fe1f1f; 
+  text-decoration: underline; 
+  font-family: "Great Vibes", cursive; 
+  font-size: 45px;
+  margin-top: 20px;
+}
+
 .infoDecoration2 { 
   color: #6ce427; 
   text-decoration: underline; 
