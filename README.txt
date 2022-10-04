@@ -1,15 +1,29 @@
-DECISIONES:
+DECISIONES DE INTERFAZ:
 
-    -En pantalla de login no uso la propiedad blur de los input (hace que se dejen de mostrar los errores de los campos) porque
+    -En la pantalla de login no se usa la propiedad blur de los input (haría que se dejen de mostrar los errores de los campos cuando se pulse fuera del input) porque
         el usuario podria pensar que es correcta la informacion que ha escrito cuando pulsa fuera del input.
     
     -He añadido un campo de contraseña de confirmacion en el formulario de sign up porque es lo más común.
 
-    -He tratado de evitar que al hacerse la pantalla mas pequeña el navbar no se coloque sobre el titulo de la pagina pero no he sido capaz.
+    -Se han dedicado varias horas a tratar de evitar que los componentes del navbar se superponganal hacerse la pantalla mas pequeña.
 
-    -No permito que se modifiquen el id de los usuarios porque nose como afectaria eso a la base de datos.
+    -No se permite que se modifiquen ni el id ni el email de los usuarios por evitar posibles problemas con la base de datos, ya que no 
+        tengo suficiente informacion sobre ella.
 
-    -Al recargar la pagina si el usuario estaba logeado continuará logeado
+
+FUNCIONALIDADES DE LA APLICACIÓN:
+
+    -Al registrar un usuario se redirige al usuario a la pantalla de login para que inicie sesion.
+
+    -Al recargar la pagina si el usuario estaba logeado continuará logeado y en la misma pagina.
+
+    -Al modificar o eliminar el usuario de la sesion se cierra la sesion para evitar errores.
+
+    -Los usuarios cuyo dominio de su correo electronico sea "@hiberus" serán identificados como administradores, y por tanto podran modificar la informacion
+        de otros usuarios y otros administradores, a los usuarios base no se les permite modificar la informacion de un usuario administrador.
+
+    -Se han utilizado componentes NgbModal para gestionar la confirmacion de eliminacion o modificacion de informacion.
+
 
 
 

@@ -1,8 +1,6 @@
 import {Component, Input} from '@angular/core';
 
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CustomValidators } from 'src/app/validators/customValidators';
 import { UsersService } from 'src/app/services/usersService/users-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
