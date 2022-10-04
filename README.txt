@@ -1,6 +1,6 @@
 EJECUCIÓN:
 
-    Desde la carpeta appUsers ejecutar "npm i" para instalar las dependencias y node_modules.
+    Desde la carpeta appUsers ejecutar "npm i --force" para instalar las dependencias y node_modules.
 
     Desde esta misma carpeta ejecutar "npm start", lo que lanzará la web en un puerto en local.
 
