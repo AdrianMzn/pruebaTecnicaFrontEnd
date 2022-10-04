@@ -52,6 +52,9 @@ export class NgbdModalUpdate {
     if( this.updateForm.valid ){
 
         this.usersService.updateUser(this.userToUpdate['id'], this.userToUpdate['email'], this.updateForm.value).subscribe( (data: any) => {
+          alert('The user has been modified.')
+          window.location.reload();
+
           
         },
         (error: HttpErrorResponse) => {
