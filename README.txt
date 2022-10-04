@@ -40,7 +40,7 @@ TIEMPO DEDICADO:
         se recarga pantalla el usuario seguirá logueado. - 4h
     -3/09/2022 Modificacion de estilos en todas las paginas y correcciones responsive, tratado de usar modales sin éxito. - 2h
     -4/09/2022 Añadidos modales de modificacion y eliminacion de usuarios, eliminación de logs y traduccion de algunos alerts a ingles, modificacion
-        de estilos del navbar y de las paginas Home, Login y Signup, añadidos filtros en la pagina de Users. - 6h
+        de estilos del navbar y de las paginas Home, Login y Signup, añadidos filtros en la pagina de Users y modificada pagina de error. - 6h
 
     
     Total horas dedicadas: 24 horas
