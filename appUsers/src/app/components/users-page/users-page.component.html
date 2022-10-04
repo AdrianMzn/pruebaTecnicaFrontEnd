@@ -1,6 +1,31 @@
 <div class="container divUsers">
+
+    <div class="form-group row fieldForm" style="margin-bottom: 50px;">
+        <div class="col-sm-2"></div>
+
+        <label class="col-sm-2 col-form-label">Who are you looking for?</label>
+        <div class="col-sm-2">
+            <input type="name" id="name" [(ngModel)]="nameInput" (ngModelChange)="this.applyFilters()" class="form-control"/>
+        </div>
+
+        <div class="col-sm-1"></div>
+
+        <label class="col-sm-2 col-form-label" >What type of user?</label>
+        <div class="col-sm-2">
+            <select name="" id="cantidad" class="form-control" [(ngModel)]="typeInput" (ngModelChange)="this.applyFilters()">
+                <option default >All</option>
+                <option *ngFor="let tipo of tipos">
+                    {{tipo}}
+                </option>
+                
+            </select>
+        </div>
+
+    </div>
+
+
     <div class="row centerRow ">
-        <div *ngFor="let user of this.usuarios;let i=index;" class="col-md-4 columnItem">      
+        <div *ngFor="let user of this.usuariosFilted;let i=index;" class="col-md-4 columnItem">      
 
             <div *ngIf="esAdmin( user['email'] );else other_content">
                 <svg style="margin-top: 30px; margin-bottom: 30px;" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
