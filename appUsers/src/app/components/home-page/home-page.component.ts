@@ -77,7 +77,7 @@ export class HomePageComponent implements OnInit {
     if( this.updateForm.valid ){
 
       this.usersService.updateUser(this.userInfo.id, this.userInfo.email, this.updateForm.value).subscribe( (data: any) => {
-        alert("Usuario actual modificado, se cerrará esta sesion.");
+        alert("Modified current user, this session will be closed.");
         
         sessionStorage.setItem('logged','false');
         this.router.navigate(['login']);

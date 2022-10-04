@@ -42,11 +42,6 @@
     width: 360px;
     padding: 10px;
     max-height: 80px;
-    position: absolute;
-    margin-top: -40px;
-    margin-left: -180px;
-    top: 50%;
-    left: 50%;
     background-color: rgba(0, 0, 0, .1);
     border: solid rgba(0, 0, 0, .15);
     border-width: 1px 0;
@@ -64,11 +59,26 @@
     text-align: center; 
 }
 
-.divNavbar2{
-    text-align: center;
-    justify-content: center;
-    font-weight: normal; 
-    text-align: center; 
+.lineaNavbar{
+    
+    height:10px; 
+    width: 80%;
+    margin-left:10%;
+    margin-right:10%;
+    border: 4px solid #00ff2f; 
+    border-radius: 5px;
+}
+
+
+.lineaNavbar2{
+
+    height: 10px; 
+    width: 60%;
+    margin-left:20%;
+    margin-right:20%;
+
+    border: 4px solid #00ff2f; 
+    border-radius: 5px;
 }
 
 .center-screen {
@@ -79,4 +89,27 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
   }
+
+.divTituloNavbar{
+    color: #CEF0D4; 
+    font-family: 'Rouge Script', cursive; 
+    font-size: 70px; 
+    font-weight: normal; 
+    line-height: 90px; 
+    margin: 0 0 20px; 
+    text-align: center; 
+    text-shadow: 1px 1px 2px #082b34;
+    text-decoration: underline;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    
+    margin-top: 20px;
+    background-color: aqua;
+    width: 320px;
+    height: 110px;
+    border-radius: 40px;
+}
 

@@ -1,7 +1,7 @@
 <div class="container divSombreado">
 
         <div class="divTitulo center">
-            <h2 class="titulo">LOG-IN</h2>
+            <h2 class="titulo2">LOG-IN</h2>
         </div>
 
         <form [formGroup]="loginForm">
@@ -10,8 +10,8 @@
                 <div class="col-sm-10">
                     <input type="email" formControlName="email" placeholder="Email: ejemplo@ejemplo.com" id="email" (focus)="emailErrors=true;" class="form-control"/>
                     <div *ngIf="emailErrors">
-                        <div *ngIf="email?.errors?.['required']" [ngStyle]="{color: 'red'}"> Email obligatorio</div>
-                        <div *ngIf="email?.errors?.['pattern']" [ngStyle]="{color: 'red'}"> Email debe contener el caracter '@' y un dominio<br></div>
+                        <div *ngIf="email?.errors?.['required']" [ngStyle]="{color: 'red'}"> * Email necessary</div>
+                        <div *ngIf="email?.errors?.['pattern']" [ngStyle]="{color: 'red'}"> * The email must contain the character '@' and a domain<br></div>
                         
                     </div>
                 </div>
@@ -22,14 +22,14 @@
                 <div class="col-sm-10">
                     <input type="password" formControlName="password" placeholder="Password" id="password" (focus)="passwordErrors=true;" class="form-control"/> 
                     <div *ngIf="passwordErrors">
-                        <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> Contraseña obligatoria</div>
+                        <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> * Password necessary</div>
                     </div>
                 </div>
             </div>
             
             <div class="form-group botonForm">
                 <div class="col-sm-12">
-                    <button type="submit" class="btn btn-primary" (click)="login();">Login</button>
+                    <button type="submit" class="btn btn-primary" (click)="login();">LOGIN</button>
                 </div>
             </div>
 

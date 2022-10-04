@@ -28,27 +28,22 @@ footer {
 
 /* Estilos comunes para todas las paginas */
 
-.titulo{
+
+.titulo2 { 
   color: #a3ebb0; 
-  font-family: 'Rouge Script', cursive; 
-  font-size: 40px; 
+  font-family: "Great Vibes", cursive; 
+  font-size: 45px; 
+  line-height: 60px; 
   font-weight: normal; 
-  line-height: 48px; 
-  margin: 0 0 50px; 
+  margin-bottom: 40px; 
+  margin-top: 40px; 
   text-align: center; 
   text-shadow: 1px 1px 2px #082b34;
-}
+  }
 
-.titulo2{
-  color: #fe921f; 
-  font-family: 'Rouge Script', cursive; 
-  font-size: 40px; 
-  font-weight: normal; 
-  line-height: 48px; 
-  margin: 0 0 50px; 
-  text-align: center; 
-  text-shadow: 1px 1px 2px #65767a;
-}
+  .titulo4{
+    color: #b48608; font-family: 'Droid serif', serif; font-size: 36px; font-weight: 400; font-style: italic; line-height: 44px; margin: 0 0 12px; text-align: center;
+  }
 
 
 
@@ -73,6 +68,12 @@ footer {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+.center{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .fieldForm{

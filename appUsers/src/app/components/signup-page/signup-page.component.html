@@ -1,7 +1,7 @@
 <div class="container divSombreado">
 
     <div class="divTitulo center">
-        <h2 class="titulo">SIGN-UP</h2>
+        <h2 class="titulo2">SIGN-UP</h2>
     </div>
     
     <form [formGroup]="signupForm">
@@ -10,7 +10,7 @@
             <div class="col-sm-10">
                 <input type="name" formControlName="name" placeholder="Name" id="email" (focus)="nameErrors=true;" class="form-control"/>
                 <div *ngIf="nameErrors">
-                    <div *ngIf="name?.errors?.['required']" [ngStyle]="{color: 'red'}"> Name obligatorio</div>    
+                    <div *ngIf="name?.errors?.['required']" [ngStyle]="{color: 'red'}">  * Name necessary</div>    
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
             <div class="col-sm-10">
                 <input type="surname" formControlName="surname" placeholder="Surname" id="surname" (focus)="surnameErrors=true;" class="form-control"/>
                 <div *ngIf="surnameErrors">
-                    <div *ngIf="surname?.errors?.['required']" [ngStyle]="{color: 'red'}"> Surname obligatorio</div>
+                    <div *ngIf="surname?.errors?.['required']" [ngStyle]="{color: 'red'}">* Surname necessary</div>
                 </div>
             </div>
         </div>
@@ -30,8 +30,8 @@
             <div class="col-sm-10">
                 <input type="email" formControlName="email" placeholder="Email: ejemplo@ejemplo.com" id="email" (focus)="emailErrors=true;" class="form-control"/> 
                 <div *ngIf="emailErrors">
-                    <div *ngIf="email?.errors?.['required']" [ngStyle]="{color: 'red'}"> Email obligatorio</div>
-                    <div *ngIf="email?.errors?.['pattern']" [ngStyle]="{color: 'red'}"> Email debe contener el caracter '@' y un dominio<br></div>
+                    <div *ngIf="email?.errors?.['required']" [ngStyle]="{color: 'red'}"> * Email necessary</div>
+                    <div *ngIf="email?.errors?.['pattern']" [ngStyle]="{color: 'red'}"> * The email must contain the character '@' and a domain<br></div>
                     
                 </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="col-sm-10">
                 <input type="password" formControlName="password" placeholder="Password" id="password" (focus)="passwordErrors=true;" class="form-control"/>
                 <div *ngIf="passwordErrors">
-                    <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> Contraseña obligatoria</div>
+                    <div *ngIf="password?.errors?.['required']" [ngStyle]="{color: 'red'}"> * Password necessary</div>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="col-sm-10">
                 <input type="password" formControlName="passwordConfirm" placeholder="Confirm password" id="passwordConfirm" (focus)="passwordConfirmErrors=true;" class="form-control"/>
                 <div *ngIf="passwordMatchError" [ngStyle]="{color: 'red'}"> 
-                    Password does not match
+                    * Password does not match
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
 
         <div class="form-group botonForm">
             <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary" (click)="signup();">SignUp</button>
+                <button type="submit" class="btn btn-primary" (click)="signup();">SIGN UP</button>
             </div>
         </div>
 
